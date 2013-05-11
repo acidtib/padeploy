@@ -31,6 +31,5 @@ done
 
 /usr/bin/mysqladmin -u root password $mysqlPassword
 
-
 clear
 echo 'Okay.... apache, php and mysql is installed, running and set to your desired password'
