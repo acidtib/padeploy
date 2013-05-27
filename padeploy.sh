@@ -8,6 +8,22 @@ if [ -f "/etc/redhat-release" ]; then
 
 				echo 'Going to install the LAMP stack on your box, here we go...'
 				echo '------------------------'
+				read -p "MySQL Password: " mysqlPassword
+				read -p "Retype password: " mysqlPasswordRetype
+
+				while [[ "$mysqlPassword" = "" && "$mysqlPassword" != "$mysqlPasswordRetype" ]]; do
+					  echo -n "Please enter the desired mysql root password: "
+					  stty -echo
+					  read -r mysqlPassword
+					  echo
+					  echo -n "Retype password: "
+					  read -r mysqlPasswordRetype
+					  stty echo
+					  echo
+					  if [ "$mysqlPassword" != "$mysqlPasswordRetype" ]; then
+					    	echo "Passwords do not match!"
+					  fi
+				done
 				
 
             elif [[ $i = "Fedora" ]]; then
