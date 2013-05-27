@@ -1,3 +1,0 @@
-{"ts":1368241754072,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":[],"silentsave":false,"ts":1368241812123,"patch":[[{"diffs":[[1,"padeploy quick installer:\n==========================\n\nTo install any of the following, just copy and paste the text in the box."]],"start1":0,"start2":0,"length1":0,"length2":127}]],"length":127,"saved":false}
-{"ts":1368241847411,"patch":[[{"diffs":[[0,"the box."],[1,"\n\nCentOS 6.x LAMP\n-----\n    source <(curl -s  --insecure)"]],"start1":119,"start2":119,"length1":8,"length2":65}]],"length":184,"saved":false}
