@@ -8,7 +8,6 @@ if [ -f "/etc/redhat-release" ]; then
             
             if [[ $i = "CentOS" ]]; then
             	
-            	PS3='Please enter your choice: '
 				options=("LAMP - Apache2 With PHP5 And MySQL" "LEMP - Nginx With PHP5 And MySQL" "Quit")
 				select opt in "${options[@]}"
 				do
