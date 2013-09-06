@@ -14,14 +14,37 @@ if [ -f "/etc/redhat-release" ]; then
 				do
 				    case $opt in
 				        "LAMP - Apache2 With PHP5 And MySQL")
-				            echo "you chose choice 1"
-				            
+				            clear
+
+				            echo 'Going to install the LAMP stack on your box, here we go...'
+							echo '------------------------'
+							read -p "MySQL Password: " mysqlPassword
+							read -p "Retype password: " mysqlPasswordRetype
+
+
+
+
+							while [[ "$mysqlPassword" = "" && "$mysqlPassword" != "$mysqlPasswordRetype" ]]; do
+							  	echo -n "Please enter the desired mysql root password: "
+							  	stty -echo
+							  	read -r mysqlPassword
+							  	echo
+							  	echo -n "Retype password: "
+							  	read -r mysqlPasswordRetype
+							  	stty echo
+							  	echo
+							  	if [ "$mysqlPassword" != "$mysqlPasswordRetype" ]; then
+							    	echo "Passwords do not match!"
+							  	fi
+							done
+
+				            ;;
 				        "LEMP - Nginx With PHP5 And MySQL")
 				            echo "you chose choice 2"
-				            
+				            ;;
 				        "Quit")
 				            break
-				            
+				            ;;
 				        *) echo invalid option;;
 				    esac
 				done
