@@ -18,7 +18,7 @@ if [ -f "/etc/redhat-release" ]; then
 				            echo 'Going to install the LAMP stack on your box, here we go...'
 							echo '------------------------'
 							
-							MYSQL_PASSWORD=openssl rand -base64 12
+							MYSQL_PASSWORD='openssl rand -base64 12'
 
 							echo "$MYSQL_PASSWORD"
 
