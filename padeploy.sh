@@ -24,6 +24,10 @@ if [ -f "/etc/redhat-release" ]; then
 
     done
 
+elif [ -f "/etc/lsb-release" ]; then
+        
+        echo "ubuntu"
+
 elif [ -f "/etc/debian_version" ]; then
         
         echo "debian"
