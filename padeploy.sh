@@ -22,6 +22,18 @@ if [ -f "/etc/redhat-release" ]; then
 
 							echo "$MYSQL_PASSWORD"
 
+							echo "##############################################"
+							echo "#                                            #"
+							echo "#                 That's it!                 #"
+							echo "#          LAMP has been installed!          #"
+							echo "#                                            #"
+							echo "#                                            #"
+							echo "#    MYSQL                                   #"
+							echo "#    -------------------------------------   #"
+							echo "#    username: root                          #"
+							echo "#    password: hoGuTMg9lUbmw0fs              #"
+							echo "##############################################"
+
 				            ;;
 				        "LEMP - Nginx With PHP5 And MySQL")
 				            echo "you chose choice 2"
