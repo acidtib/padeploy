@@ -8,7 +8,23 @@ if [ -f "/etc/redhat-release" ]; then
             
             if [[ $i = "CentOS" ]]; then
             	
-            	echo "CentOS"
+            	PS3='Please enter your choice: '
+				options=("LAMP - Apache2 With PHP5 And MySQL" "LEMP - Nginx With PHP5 And MySQL" "Quit")
+				select opt in "${options[@]}"
+				do
+				    case $opt in
+				        "LAMP - Apache2 With PHP5 And MySQL")
+				            echo "you chose choice 1"
+				            ;;
+				        "LEMP - Nginx With PHP5 And MySQL")
+				            echo "you chose choice 2"
+				            ;;
+				        "Quit")
+				            break
+				            ;;
+				        *) echo invalid option;;
+				    esac
+				done
 
             elif [[ $i = "Fedora" ]]; then
             	
