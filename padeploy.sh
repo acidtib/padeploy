@@ -17,25 +17,10 @@ if [ -f "/etc/redhat-release" ]; then
 
 				            echo 'Going to install the LAMP stack on your box, here we go...'
 							echo '------------------------'
-							read -p "MySQL Password: " mysqlPassword
-							read -p "Retype password: " mysqlPasswordRetype
+							
+							MYSQL_PASSWORD=openssl rand -base64 12
 
-
-
-
-							while [[ "$mysqlPassword" = "" && "$mysqlPassword" != "$mysqlPasswordRetype" ]]; do
-							  	echo -n "Please enter the desired mysql root password: "
-							  	stty -echo
-							  	read -r mysqlPassword
-							  	echo
-							  	echo -n "Retype password: "
-							  	read -r mysqlPasswordRetype
-							  	stty echo
-							  	echo
-							  	if [ "$mysqlPassword" != "$mysqlPasswordRetype" ]; then
-							    	echo "Passwords do not match!"
-							  	fi
-							done
+							echo "$MYSQL_PASSWORD"
 
 				            ;;
 				        "LEMP - Nginx With PHP5 And MySQL")
