@@ -15,13 +15,13 @@ if [ -f "/etc/redhat-release" ]; then
 				    case $opt in
 				        "LAMP - Apache2 With PHP5 And MySQL")
 				            echo "you chose choice 1"
-				            ;;
+				            
 				        "LEMP - Nginx With PHP5 And MySQL")
 				            echo "you chose choice 2"
-				            ;;
+				            
 				        "Quit")
 				            break
-				            ;;
+				            
 				        *) echo invalid option;;
 				    esac
 				done
