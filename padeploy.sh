@@ -26,7 +26,7 @@ if [ -f "/etc/redhat-release" ]; then
 							/etc/init.d/mysqld start
 
 							chkconfig --levels 235 httpd on
-							/etc/init.d/mysqld restart
+							/etc/init.d/httpd restart
 
 							/usr/bin/mysqladmin -u root password $MYSQL_PASSWORD
 
