@@ -8,7 +8,7 @@ if [ -f "/etc/redhat-release" ]; then
             
             if [[ $i = "CentOS" ]]; then
             	
-				options=("LAMP - Apache2 With PHP5 And MySQL" "LEMP - Nginx With PHP5 And MySQL" "Quit")
+				options=("LAMP - Apache2 With PHP5 And MySQL" "LEMP - Nginx With PHP5 And MySQL" "Forget About It")
 				select opt in "${options[@]}"
 				do
 				    case $opt in
@@ -20,7 +20,15 @@ if [ -f "/etc/redhat-release" ]; then
 							
 							MYSQL_PASSWORD=$(openssl rand -base64 12)
 
-							#echo "$MYSQL_PASSWORD"
+							yum install -y httpd php php-mysql php-gd php-imap php-ldap php-mbstring php-odbc php-pear php-xml php-xmlrpc php-pecl-apc mysql mysql-server
+
+							chkconfig --levels 235 mysqld on
+							/etc/init.d/mysqld start
+
+							chkconfig --levels 235 httpd on
+							/etc/init.d/mysqld restart
+
+							/usr/bin/mysqladmin -u root password $MYSQL_PASSWORD
 
 							echo "##############################################"
 							echo "#                                            #"
@@ -32,6 +40,7 @@ if [ -f "/etc/redhat-release" ]; then
 							echo "#    -------------------------------------   #"
 							echo "#    username: root                          #"
 							echo "#    password: $MYSQL_PASSWORD              #"
+							echo "#                                            #"
 							echo "##############################################"
 
 							break
