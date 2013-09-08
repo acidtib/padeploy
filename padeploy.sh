@@ -34,6 +34,7 @@ if [ -f "/etc/redhat-release" ]; then
 							echo "#    password: $MYSQL_PASSWORD              #"
 							echo "##############################################"
 
+							break
 				            ;;
 				        "LEMP - Nginx With PHP5 And MySQL")
 				            echo "you chose choice 2"
