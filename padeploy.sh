@@ -20,7 +20,7 @@ if [ -f "/etc/redhat-release" ]; then
 							
 							MYSQL_PASSWORD=$(openssl rand -base64 12)
 
-							echo "$MYSQL_PASSWORD"
+							#echo "$MYSQL_PASSWORD"
 
 							echo "##############################################"
 							echo "#                                            #"
@@ -31,7 +31,7 @@ if [ -f "/etc/redhat-release" ]; then
 							echo "#    MYSQL                                   #"
 							echo "#    -------------------------------------   #"
 							echo "#    username: root                          #"
-							echo "#    password: hoGuTMg9lUbmw0fs              #"
+							echo "#    password: $MYSQL_PASSWORD              #"
 							echo "##############################################"
 
 				            ;;
