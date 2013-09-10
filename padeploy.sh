@@ -80,6 +80,8 @@ if [ -f "/etc/redhat-release" ]; then
 
 							sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php.ini
 
+rm -rf /etc/nginx/conf.d/default.conf
+touch /etc/nginx/conf.d/default.conf
 cat > /etc/nginx/conf.d/default.conf <<END
 server {
     listen	 80;
