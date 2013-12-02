@@ -1,26 +1,47 @@
 #!/bin/bash
-while :
+PS3="Enter the space shuttle to get quick information : "
+ 
+# set shuttle list
+select shuttle in columbia endeavour challenger discovery atlantis enterprise pathfinder
 do
- clear
- echo "   M A I N - M E N U"
- echo "1. Contents of /etc/passwd"
- echo "2. List of users currently logged"
- echo "3. Prsent handling directory"
- echo "4. Exit"
- echo -n "Please enter option [1 - 4]"
- read opt
- case $opt in
-  1) echo "************ Conents of /etc/passwd *************";
-     more /etc/passwd;;
-  2) echo "*********** List of users currently logged";
-     who | more;;
-  3) echo "You are in $(pwd) directory";   
-     echo "Press [enter] key to continue. . .";
-     read enterKey;;
-  4) echo "Bye $USER";
-     exit 1;;
-  *) echo "$opt is an invaild option. Please select option between 1-4 only";
-     echo "Press [enter] key to continue. . .";
-     read enterKey;;
-esac
+	case $shuttle in
+		columbia)
+			echo "--------------"
+			echo "Space Shuttle Columbia was the first spaceworthy space shuttle in NASA's orbital fleet."
+			echo "--------------"
+			;;
+		endeavour)
+			echo "--------------"		
+			echo "Space Shuttle Endeavour is one of three currently operational orbiters in the Space Shuttle." 
+			echo "--------------"		
+			;;
+		challenger) 
+			echo "--------------"				
+		    echo "Space Shuttle Challenger was NASA's second Space Shuttle orbiter to be put into service."
+			echo "--------------"				    
+			;;		
+		discovery) 
+			echo "--------------"		
+			echo "Discovery became the third operational orbiter, and is now the oldest one in service."
+			echo "--------------"							
+			;;		
+		atlantis)
+			echo "--------------"		
+			echo "Atlantis was the fourth operational shuttle built."
+			echo "--------------"							
+			;;
+		enterprise)
+			echo "--------------"		
+			echo "Space Shuttle Enterprise was the first Space Shuttle orbiter."
+			echo "--------------"							
+			;;		
+		pathfinder)
+			echo "--------------"		
+			echo "Space Shuttle Orbiter Pathfinder is a Space Shuttle simulator made of steel and wood."
+			echo "--------------"							
+			;;
+		*)		
+			echo "Error: Please try again (select 1..7)!"
+			;;		
+	esac
 done
