@@ -6,9 +6,9 @@ select recipes in 'LAMP - Apache2 With PHP5 And MySQL' 'LEMP - Nginx With PHP5 A
 do
 	case $recipes in
 		'LAMP - Apache2 With PHP5 And MySQL')
-			echo "--------------"
-			echo "Space Shuttle Columbia was the first spaceworthy space shuttle in NASA's orbital fleet."
-			echo "--------------"
+			
+			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lamp.sh --insecure)
+
 			;;
 		'LEMP - Nginx With PHP5 And MySQL')
 			echo "--------------"		
