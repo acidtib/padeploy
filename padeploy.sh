@@ -8,40 +8,30 @@ if [ -f "/etc/redhat-release" ]; then
             
             if [[ $i = "CentOS" ]]; then
             	
-				options=("LAMP - Apache2 With PHP5 And MySQL" "LEMP - Nginx With PHP5 And MySQL" "LAMP - Wordpress - Apache2 With PHP5 And MySQL" "Forget About It")
-				select opt in "${options[@]}"
-				do
-				    case $opt in
-				        "LAMP - Apache2 With PHP5 And MySQL")
-				            clear
-
-				            echo 'Im LAMP'
-				            echo '------------------------'
-					
-							break
-				            ;;
-				        "LAMP - Wordpress - Apache2 With PHP5 And MySQL")
-				            clear
-
-				            echo 'Im LAMP with Wordpress'
-				            echo '------------------------'
-					
-							break
-				            ;;
-				        "LEMP - Nginx With PHP5 And MySQL")
-				            clear
-
-				            echo 'Im LEMP'
-							echo '------------------------'
-							
-							break
-				            ;;
-				        "Quit")
-				            break
-				            ;;
-				        *) echo invalid option;;
-				    esac
-				done
+				cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
+options=(1 "Option 1" off    # any option can be set to default to "on"
+         2 "Option 2" off
+         3 "Option 3" off
+         4 "Option 4" off)
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+for choice in $choices
+do
+    case $choice in
+        1)
+            echo "First Option"
+            ;;
+        2)
+            echo "Second Option"
+            ;;
+        3)
+            echo "Third Option"
+            ;;
+        4)
+            echo "Fourth Option"
+            ;;
+    esac
+done
 
             elif [[ $i = "Fedora" ]]; then
             	
