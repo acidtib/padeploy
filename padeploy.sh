@@ -8,7 +8,7 @@ if [ -f "/etc/redhat-release" ]; then
             
             if [[ $i = "CentOS" ]]; then
             	
-				source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/head.sh --insecure)
+				source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/head.sh --insecure)
 
             elif [[ $i = "Fedora" ]]; then
             	

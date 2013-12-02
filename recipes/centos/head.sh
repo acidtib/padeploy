@@ -7,17 +7,17 @@ do
 	case $recipes in
 		'LAMP - Apache2 With PHP5 And MySQL')
 			
-			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lamp.sh --insecure)
+			source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/lamp.sh --insecure)
 
 			;;
 		'LEMP - Nginx With PHP5 And MySQL')
 			
-			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lemp.sh --insecure)
+			source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/lemp.sh --insecure)
 
 			;;
 		'LAMP - Wordpress - Apache2 With PHP5 And MySQL') 
 			
-			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lamp_wordpress.sh --insecure)
+			source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/lamp_wordpress.sh --insecure)
 
 			;;				
 		'Exit')
