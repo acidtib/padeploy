@@ -11,9 +11,9 @@ do
 
 			;;
 		'LEMP - Nginx With PHP5 And MySQL')
-			echo "--------------"		
-			echo "Space Shuttle Endeavour is one of three currently operational orbiters in the Space Shuttle." 
-			echo "--------------"		
+			
+			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lemp.sh --insecure)
+
 			;;
 		'LAMP - Wordpress - Apache2 With PHP5 And MySQL') 
 			echo "--------------"				
