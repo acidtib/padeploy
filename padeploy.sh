@@ -2,10 +2,10 @@
 PS3="Select recipe : "
  
 # set shuttle list
-select shuttle in LAMP LEMP challenger discovery atlantis enterprise 'Exit'
+select shuttle in 'LAMP - Apache2 With PHP5 And MySQL' LEMP challenger discovery atlantis enterprise 'Exit'
 do
 	case $shuttle in
-		LAMP)
+		'LAMP - Apache2 With PHP5 And MySQL')
 			echo "--------------"
 			echo "Space Shuttle Columbia was the first spaceworthy space shuttle in NASA's orbital fleet."
 			echo "--------------"
@@ -38,7 +38,9 @@ do
 		'Exit')
 			echo "--------------"		
 			echo "Space Shuttle Orbiter Pathfinder is a Space Shuttle simulator made of steel and wood."
-			echo "--------------"							
+			echo "--------------"	
+
+			break						
 			;;
 		*)		
 			echo "Error: Please try again (select 1..7)!"
