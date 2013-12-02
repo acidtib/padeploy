@@ -1,14 +1,5 @@
-#!/bin/sh
-if [ -f "/etc/redhat-release" ]; then
-    
-    rhos="Fedora CentOS Red Hat"
-    for i in $rhos; do
-        
-        if [ ! -z "`/bin/grep $i /etc/redhat-release`" ]; then
-            
-            if [[ $i = "CentOS" ]]; then
-            	
-				cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
+#!/bin/bash
+cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
 options=(1 "Option 1" off    # any option can be set to default to "on"
          2 "Option 2" off
          3 "Option 3" off
@@ -32,35 +23,3 @@ do
             ;;
     esac
 done
-
-            elif [[ $i = "Fedora" ]]; then
-            	
-            	echo "Fedora"
-
-            elif [[ $i = "Red Hat" ]]; then
-            	
-            	echo "Red Hat"
-
-            fi
-
-        fi
-
-    done
-
-elif [ -f "/etc/lsb-release" ]; then
-        
-        echo "ubuntu"
-
-elif [ -f "/etc/debian_version" ]; then
-        
-        echo "debian"
-
-elif [ -f "/etc/arch-release" ]; then
-        
-        echo "arch"
-
-elif [ -f "/etc/SuSE-release" ]; then
-        
-        echo 'suse'
-
-fi
