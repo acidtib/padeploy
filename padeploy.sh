@@ -1,11 +1,11 @@
 #!/bin/bash
-PS3="Enter the space shuttle to get quick information : "
+PS3="Select recipe : "
  
 # set shuttle list
-select shuttle in columbia endeavour challenger discovery atlantis enterprise pathfinder
+select shuttle in LAMP - Apache2 With PHP5 And MySQL endeavour challenger discovery atlantis enterprise pathfinder
 do
 	case $shuttle in
-		columbia)
+		LAMP - Apache2 With PHP5 And MySQL)
 			echo "--------------"
 			echo "Space Shuttle Columbia was the first spaceworthy space shuttle in NASA's orbital fleet."
 			echo "--------------"
