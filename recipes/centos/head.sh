@@ -16,9 +16,9 @@ do
 
 			;;
 		'LAMP - Wordpress - Apache2 With PHP5 And MySQL') 
-			echo "--------------"				
-		    echo "Space Shuttle Challenger was NASA's second Space Shuttle orbiter to be put into service."
-			echo "--------------"				    
+			
+			source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/lamp_wordpress.sh --insecure)
+
 			;;				
 		'Exit')
 			
