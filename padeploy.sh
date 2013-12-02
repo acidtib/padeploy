@@ -1,25 +1,26 @@
 #!/bin/bash
-cmd=(dialog --separate-output --checklist "Select options:" 22 76 16)
-options=(1 "Option 1" off    # any option can be set to default to "on"
-         2 "Option 2" off
-         3 "Option 3" off
-         4 "Option 4" off)
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-clear
-for choice in $choices
+while :
 do
-    case $choice in
-        1)
-            echo "First Option"
-            ;;
-        2)
-            echo "Second Option"
-            ;;
-        3)
-            echo "Third Option"
-            ;;
-        4)
-            echo "Fourth Option"
-            ;;
-    esac
+ clear
+ echo "   M A I N - M E N U"
+ echo "1. Contents of /etc/passwd"
+ echo "2. List of users currently logged"
+ echo "3. Prsent handling directory"
+ echo "4. Exit"
+ echo -n "Please enter option [1 - 4]"
+ read opt
+ case $opt in
+  1) echo "************ Conents of /etc/passwd *************";
+     more /etc/passwd;;
+  2) echo "*********** List of users currently logged";
+     who | more;;
+  3) echo "You are in $(pwd) directory";   
+     echo "Press [enter] key to continue. . .";
+     read enterKey;;
+  4) echo "Bye $USER";
+     exit 1;;
+  *) echo "$opt is an invaild option. Please select option between 1-4 only";
+     echo "Press [enter] key to continue. . .";
+     read enterKey;;
+esac
 done
