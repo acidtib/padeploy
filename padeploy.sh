@@ -1,49 +1,43 @@
 #!/bin/bash
-PS3="Select recipe : "
- 
-# set shuttle list
-select shuttle in 'LAMP - Apache2 With PHP5 And MySQL' LEMP challenger discovery atlantis enterprise 'Exit'
-do
-	case $shuttle in
-		'LAMP - Apache2 With PHP5 And MySQL')
-			echo "--------------"
-			echo "Space Shuttle Columbia was the first spaceworthy space shuttle in NASA's orbital fleet."
-			echo "--------------"
-			;;
-		LEMP)
-			echo "--------------"		
-			echo "Space Shuttle Endeavour is one of three currently operational orbiters in the Space Shuttle." 
-			echo "--------------"		
-			;;
-		challenger) 
-			echo "--------------"				
-		    echo "Space Shuttle Challenger was NASA's second Space Shuttle orbiter to be put into service."
-			echo "--------------"				    
-			;;		
-		discovery) 
-			echo "--------------"		
-			echo "Discovery became the third operational orbiter, and is now the oldest one in service."
-			echo "--------------"							
-			;;		
-		atlantis)
-			echo "--------------"		
-			echo "Atlantis was the fourth operational shuttle built."
-			echo "--------------"							
-			;;
-		enterprise)
-			echo "--------------"		
-			echo "Space Shuttle Enterprise was the first Space Shuttle orbiter."
-			echo "--------------"							
-			;;		
-		'Exit')
-			echo "--------------"		
-			echo "Space Shuttle Orbiter Pathfinder is a Space Shuttle simulator made of steel and wood."
-			echo "--------------"	
+if [ -f "/etc/redhat-release" ]; then
+    
+    rhos="Fedora CentOS Red Hat"
+    for i in $rhos; do
+        
+        if [ ! -z "`/bin/grep $i /etc/redhat-release`" ]; then
+            
+            if [[ $i = "CentOS" ]]; then
+            	
+				source <(curl -s https://raw.github.com/drkyro/padeploy/dev/recipes/centos/head.sh --insecure)
 
-			break						
-			;;
-		*)		
-			echo "Error: Please try again (select 1..7)!"
-			;;		
-	esac
-done
+            elif [[ $i = "Fedora" ]]; then
+            	
+            	echo "Fedora"
+
+            elif [[ $i = "Red Hat" ]]; then
+            	
+            	echo "Red Hat"
+
+            fi
+
+        fi
+
+    done
+
+elif [ -f "/etc/lsb-release" ]; then
+        
+        echo "ubuntu"
+
+elif [ -f "/etc/debian_version" ]; then
+        
+        echo "debian"
+
+elif [ -f "/etc/arch-release" ]; then
+        
+        echo "arch"
+
+elif [ -f "/etc/SuSE-release" ]; then
+        
+        echo 'suse'
+
+fi
