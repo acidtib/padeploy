@@ -8,6 +8,7 @@ MYSQL_PASSWORD=$(openssl rand -base64 12)
 echo mysql-server mysql-server/root_password password $MYSQL_PASSWORD | debconf-set-selections
 echo mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD | debconf-set-selections
 
+apt-get update -y
 apt-get install -y mysql-server mysql-client apache2 php5 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xcache
 
 /etc/init.d/apache2 restart
