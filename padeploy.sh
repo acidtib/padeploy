@@ -26,7 +26,7 @@ if [ -f "/etc/redhat-release" ]; then
 
 elif [ -f "/etc/lsb-release" ]; then
         
-        echo "ubuntu"
+        source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/ubuntu/head.sh --insecure)
 
 elif [ -f "/etc/debian_version" ]; then
         
