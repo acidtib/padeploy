@@ -2,7 +2,7 @@
 PS3="Select Recipe : "
  
 # set recipe list
-select recipes in 'LAMP - Apache2 With PHP5 And MySQL' 'LEMP - Nginx With PHP5 And MySQL' 'LAMP - Wordpress - Apache2 With PHP5 And MySQL' 'Exit'
+select recipes in 'LAMP - Apache2 With PHP5 And MySQL' 'LEMP - Nginx With PHP5 And MySQL' 'LAMP - Wordpress - Apache2 With PHP5 And MySQL' 'LEMP - Wordpress - Nginx With PHP5 And MySQL' 'Exit'
 do
 	case $recipes in
 		'LAMP - Apache2 With PHP5 And MySQL')
