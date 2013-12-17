@@ -19,7 +19,12 @@ do
 			
 			source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/lamp_wordpress.sh --insecure)
 
-			;;				
+			;;	
+		'LEMP - Wordpress - Nginx With PHP5 And MySQL') 
+			
+			source <(curl -s https://raw.github.com/drkyro/padeploy/master/recipes/centos/lemp_wordpress.sh --insecure)
+
+			;;			
 		'Exit')
 			
 			echo "--------------"	
@@ -27,7 +32,7 @@ do
 			break						
 			;;
 		*)		
-			echo "Error: Please try again (select 1..4)!"
+			echo "Error: Please try again (select 1..5)!"
 			;;		
 	esac
 done
