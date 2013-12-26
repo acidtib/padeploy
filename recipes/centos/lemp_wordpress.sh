@@ -8,7 +8,7 @@ MYSQL_PASSWORD=$(openssl rand -base64 12)
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
-yum install -y nginx php-fpm php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-magickwand php-magpierss php-mbstring php-mcrypt php-mssql php-shout php-snmp php-soap php-tidy php-pecl-apc mysql mysql-server
+yum install -y wget nginx php-fpm php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-magickwand php-magpierss php-mbstring php-mcrypt php-mssql php-shout php-snmp php-soap php-tidy php-pecl-apc mysql mysql-server
 
 yum --enablerepo=remi -y install php-fpm php-mysql
 
